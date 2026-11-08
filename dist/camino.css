@@ -1,0 +1,56 @@
+/* A narrow, continuous picture book below the paintings. */
+:root{--walk-height:clamp(55px,8.45svh,84px);--tools-height:50px;--nav-height:calc(var(--walk-height) + var(--tools-height) + env(safe-area-inset-bottom,0px))}
+#stage{min-height:min(285px,calc(100svh - var(--nav-height)))}
+.navigation{display:block;padding:0 0 env(safe-area-inset-bottom,0px);height:var(--nav-height);background:#ece4d0;color:#453e30}
+.navigation:before{content:none}
+.journey-window{position:relative;width:100%;height:var(--walk-height);overflow:hidden;background:#f1eadb}
+.journey-window:before{content:"";position:absolute;inset:-1px 0 auto;height:3px;z-index:1;pointer-events:none;background:#b6a788;opacity:.55;clip-path:polygon(0 41%,3% 67%,7% 28%,14% 49%,22% 26%,31% 54%,44% 31%,56% 48%,69% 25%,80% 51%,92% 37%,100% 55%,100% 84%,85% 68%,69% 76%,48% 69%,32% 83%,18% 65%,9% 78%,0 83%)}
+#journey-canvas{display:block;width:100%;height:100%;pointer-events:none}
+.book-tools{height:var(--tools-height);padding:0 clamp(20px,5.8vw,110px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:clamp(8px,2vw,26px);background:linear-gradient(112deg,#e7dfc9 0%,#f2ebdc 34%,#eee5d1 75%,#e8deca)}
+.book-tools .chapter{justify-self:start;min-height:44px;min-width:0;grid-template-columns:22px auto;column-gap:9px;row-gap:2px;font-size:20px;line-height:1}
+.book-tools .chapter #page{font:9px/1.1 Arial,sans-serif;letter-spacing:.12em;opacity:.77}
+.book-tools .arrows{justify-self:end;margin:0}.book-tools .arrows button{height:44px;min-height:44px}
+.pocket-key{justify-self:center;display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:2px 6px;color:#574833;font:21px/1 'Pinyon Script',cursive;white-space:nowrap}
+.pocket-key svg{width:36px;height:27px;flex:none;stroke:#695a44;stroke-linecap:round;stroke-linejoin:round;stroke-width:.95;fill:none;transform:rotate(-3deg)}
+.pocket-key .env-paper{fill:#f7efd9}.pocket-key .seal{fill:#a16c58;stroke:#825541;stroke-width:.6}
+.pocket-key span{border-bottom:1px solid #8e765547;transform:rotate(-2deg)}
+@media(hover:hover){.pocket-key:hover svg{transform:rotate(-8deg) translateY(-1px)}.pocket-key:hover span{border-color:#80623d}}
+/* The index is a foldout map with one open section, not a wall of cards. */
+#index-dialog{width:min(720px,calc(100vw - 22px));padding:clamp(19px,3vw,33px);background:linear-gradient(91deg,#f4eddb 0%,#f7f1e3 32.5%,#e9dfc8 33%,#f6efde 34%,#f4eddd 66.1%,#ebe1cb 66.5%,#f6efde 67.1%,#f0e6cf 100%)}
+#index-dialog .dialog-head{margin-bottom:15px}#index-dialog .dialog-head h2{font-size:clamp(33px,6vw,45px)}
+#map-stops{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;isolation:isolate;padding:1px 0 12px;border-bottom:1px solid #7b664334}
+#map-stops:before{content:"";z-index:-1;position:absolute;left:8%;right:8%;top:20px;height:16px;opacity:.47;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20' preserveAspectRatio='none'%3E%3Cpath d='M0 14Q33 1 58 10T120 8T182 9T235 11T298 8T350 11T400 6' fill='none' stroke='%238c704d' stroke-width='1.1' stroke-dasharray='3 3'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+#map-stops button{display:flex;flex-direction:column;align-items:center;gap:3px;min-height:55px;padding:2px 0 3px;color:#615643;font:19px/1 'Pinyon Script',cursive}
+.map-glyph{width:39px;height:36px;display:block}
+#map-stops .map-glyph{background:radial-gradient(ellipse at center,#f4eddd 32%,#f2ead8db 57%,transparent 73%)}
+#map-stops [aria-pressed=true]{color:#79492d}#map-stops [aria-pressed=true] span{box-shadow:0 1px 0 #906947;transform:rotate(-2deg)}
+#index-list .index-group{margin:17px 0 18px}.index-caption{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.index-caption em{font:10px/1.22 Arial,sans-serif;color:#665b4b}
+#index-list .index-ends{border-bottom:0}#index-list .index-ends button{font-size:20px}
+.map-luck{display:flex;align-items:center;justify-content:center;gap:10px;margin:2px 0 -5px;color:#794a32}
+.map-luck:before,.map-luck:after{content:"";width:clamp(24px,10%,62px);border-top:1px dashed #a68b6380;transform:rotate(-3deg)}
+.map-luck:after{transform:rotate(2deg)}
+#random-page{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:2px 7px;color:inherit;font:22px/1.1 'Pinyon Script',cursive}
+#random-page svg{width:30px;height:24px;transform:rotate(-4deg)}#random-page span{text-decoration:underline;text-decoration-color:#986b4373;text-underline-offset:4px;text-decoration-thickness:1px}
+.index-item img{object-position:center}
+/* A letter folded in thirds, with a stamp cut from this painting. */
+#letter-dialog{padding:0;width:min(572px,calc(100vw - 30px));border:none;max-height:calc(92dvh - env(safe-area-inset-top,0px));overflow:auto;color:#43382f;background:#f3ead5;box-shadow:0 22px 84px #100d0c75}
+#letter-dialog::backdrop{background:#191b1be0}
+.letter-sheet{position:relative;isolation:isolate;min-height:100%;padding:clamp(23px,6vw,47px) clamp(24px,7.8vw,59px) 19px;background:linear-gradient(178deg,#f3e9d0 0%,#f8f1de 29.8%,#e1d4b6 30%,#fbf4e2 30.7%,#f4ead4 68.8%,#e4d8c0 69.2%,#faf0dc 69.9%,#f0e4c9 100%)}
+.letter-sheet:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.73' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23866135' opacity='.18' filter='url(%23n)' d='M0 0h120v120H0z'/%3E%3C/svg%3E");background-size:145px 145px}
+.letter-close{position:absolute;right:2px;top:1px;z-index:2;min-height:44px;min-width:44px;font-size:28px}
+.letter-address{display:flex;align-items:baseline;gap:9px;min-height:91px;padding-top:9px;font-family:'Pinyon Script',cursive;transform:rotate(-3deg);transform-origin:left center}
+.letter-address span{font-size:19px;color:#776650}.letter-address strong{font-size:clamp(36px,7.5vw,54px);font-weight:400;line-height:1;border-bottom:1px solid #9a866568}
+.postage{position:absolute;right:clamp(31px,7.1vw,56px);top:clamp(24px,4.7vw,35px);width:clamp(57px,13vw,78px);height:clamp(63px,15vw,89px);padding:5px;background:#eee5c9;transform:rotate(6deg);filter:drop-shadow(1px 2px 1px #40331935)}
+.postage:before{content:"";position:absolute;inset:1px;border:2px dotted #a99677;pointer-events:none}
+.postage img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.77)}
+.postage svg{position:absolute;right:35%;top:23%;width:145%;height:85%;overflow:visible;color:#6f6955;opacity:.70;transform:rotate(-14deg)}
+.postage text{fill:currentColor;font:28px 'Pinyon Script',cursive}
+.letter-body{position:relative;margin-top:8px;transform:rotate(-.65deg)}
+.letter-body h2{font:clamp(32px,6.8vw,45px)/1.06 'Pinyon Script',cursive;color:#513d2e;margin:0 0 12px}
+.letter-body p{font:clamp(23px,4.8vw,28px)/1.23 'Pinyon Script',cursive;max-width:39ch}.letter-body p+p{margin-top:12px}
+.letter-tail{display:flex;align-items:center;gap:12px;margin-top:21px;color:#877052;font:20px/1 'Pinyon Script',cursive}.letter-tail .map-glyph{width:29px;height:29px}
+.letter-tail i{height:1px;width:clamp(35px,12vw,78px);background:#8a765157}.letter-tail span:last-child{margin-left:auto;transform:rotate(-4deg)}
+@media(prefers-reduced-motion:no-preference){#letter-dialog[open] .letter-sheet{transform-origin:50% 17%;animation:open-letter .45s cubic-bezier(.19,.72,.28,1) both}@keyframes open-letter{from{transform:perspective(1150px) rotateX(-16deg) translateY(7px)}to{transform:perspective(1150px) rotateX(0) translateY(0)}}}
+@media(max-width:685px){:root{--walk-height:clamp(53px,8.4svh,68px);--tools-height:47px}.book-tools{padding-inline:clamp(12px,4vw,24px);column-gap:6px}.book-tools .chapter{grid-template-columns:18px auto;column-gap:5px;font-size:18px}.book-tools .book-sign{width:18px}.book-tools .arrows{gap:1px}.book-tools .arrows button{width:44px}.pocket-key{font-size:18px;padding-inline:2px;gap:3px}.pocket-key svg{width:27px;height:22px}#map-stops button{font-size:16px}#map-stops .map-glyph{width:33px;height:31px}#map-stops:before{top:16px}.letter-address{min-height:83px}.letter-tail{margin-top:15px}}
+@media(max-height:500px) and (orientation:landscape){:root{--walk-height:40px;--tools-height:44px}#stage{min-height:min(185px,calc(100svh - var(--nav-height)))}.book-tools .chapter{font-size:17px}.letter-address{min-height:68px}}

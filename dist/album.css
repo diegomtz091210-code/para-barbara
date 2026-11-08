@@ -1,0 +1,58 @@
+/* The written half of the cover and the collected prints are one spread. */
+#stage{container:leaf / size;touch-action:pan-y pinch-zoom}
+#stage[data-lift],#stage[data-lift] *{user-select:none;cursor:grabbing}
+.intro{padding:30px 7.6vw 34px}
+.intro-copy{width:min(43vw,690px);transform:rotate(-1.5deg)}
+.intro h1{font-size:clamp(75px,min(11.0vw,18cqh),160px);line-height:.85}
+.intro-note{margin-top:clamp(17px,4cqh,37px);font-size:clamp(24px,2.55vw,34px)}
+.enter{position:relative;margin-top:clamp(12px,3cqh,27px);padding-inline:0;gap:15px}
+.enter:after{content:"";position:absolute;left:0;bottom:6px;width:62%;height:2px;background:currentColor;opacity:.42;clip-path:polygon(0 54%,22% 18%,56% 37%,91% 0,100% 35%,54% 96%,8% 84%)}
+
+.scene-text{right:5vw;bottom:clamp(21px,3.2cqh,38px);width:min(61%,420px)}
+.corner-left .scene-text{left:5vw}
+.poem{font-size:clamp(24px,2.32vw,33px);line-height:1.04;transform:rotate(-1.45deg)}
+.navigation{isolation:isolate}
+.navigation:before{left:1.5%;right:1.2%;top:-1px;border:0;height:3px;background:currentColor;opacity:.21;clip-path:polygon(0 45%,14% 32%,53% 48%,75% 5%,100% 40%,99% 78%,59% 79%,11% 72%,0 88%);transform:none}
+.chapter{display:grid;grid-template-columns:26px auto;grid-template-rows:auto auto;align-content:center;align-items:center;column-gap:12px;row-gap:4px;min-width:145px}
+.chapter .book-sign{grid-row:1/3;width:24px;height:24px;stroke:currentColor;stroke-width:1.05;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.78}
+.chapter #act{grid-column:2;align-self:end}.chapter #page{grid-column:2;margin:0;opacity:.75;font-size:10px;letter-spacing:.15em}
+.paint-progress{height:14px;display:flex;justify-content:space-between;align-items:center;position:relative;max-width:min(25vw,300px);background:none;clip-path:none;opacity:.74}
+.paint-progress:before{content:"";height:0;border-top:1px dashed currentColor;opacity:.48;position:absolute;left:1px;right:1px;top:50%}
+.paint-progress span{inset:calc(50% - .4px) 0 auto;height:1px;background:currentColor}
+.paint-progress i{width:4px;height:4px;transform:rotate(45deg);background:currentColor}
+.arrows{gap:6px}.arrows button{position:relative}.arrows button:not(:disabled):after{content:"";position:absolute;inset:6px 2px;border:1px solid currentColor;opacity:.20;border-radius:47% 52% 49% 51% / 51% 54% 48% 50%;transform:rotate(-8deg)}
+.arrows button:hover:not(:disabled):after,.arrows button:focus-visible:after{opacity:.55}.arrows svg{width:27px}
+#art-dialog{box-shadow:0 12px 80px #0008}#art-dialog .dialog-head{margin-bottom:17px}
+#index-dialog{background:linear-gradient(125deg,#f8f4e9,#ede4ce);box-shadow:0 8px 50px #19150f6b;border-inline:1px solid #8a7c5845}
+#index-dialog .dialog-head{margin-bottom:15px}#index-list{display:block}
+.index-ends{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #7965424a;border-bottom:1px solid #7965424a}
+.index-ends button{min-height:45px;font:20px 'Pinyon Script',cursive;padding:5px 0}
+.index-group{margin-top:23px}.index-group h3{display:flex;align-items:center;gap:11px;margin:0 0 7px;color:#574637;font:30px/1.1 'Pinyon Script',cursive;font-weight:400}
+.index-group h3 small{font:italic 11px Georgia,serif;letter-spacing:.06em;padding:4px 7px;border:1px solid #836f4948;border-radius:50%;min-width:24px;text-align:center}
+.index-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.index-item{min-height:61px;gap:10px;padding:7px 0;font-size:22px;width:100%}
+.index-item img{width:47px;height:42px;flex:none;object-fit:cover;clip-path:polygon(1% 2%,98% 0,100% 96%,2% 100%)}
+.index-caption{flex:1}.index-item small{opacity:.67;font-size:10px;font-variant-numeric:tabular-nums;padding-right:4px}
+.index-ends [aria-current],.index-item[aria-current]{color:#793e23;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+@container leaf (max-width:650px) and (max-aspect-ratio:10/9){
+ .intro{display:block;padding:0}
+ .intro-copy{position:absolute;left:8%;right:6%;top:43.5%;bottom:2%;width:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;transform:rotate(-1.25deg)}
+ .intro h1{font-size:clamp(49px,min(19.3cqw,12.7cqh),105px);line-height:.82}
+ .intro-note{font-size:clamp(19px,min(6.4cqw,4.35cqh),30px);line-height:1.06;max-width:98%;margin-top:clamp(9px,2.55cqh,24px)}
+ .enter{font-size:clamp(20px,5.8cqw,25px);line-height:1;margin-top:clamp(3px,1.2cqh,13px);min-height:44px;padding:6px 0}
+
+}
+@media(max-width:685px){
+ .scene-text{right:5.5vw;bottom:clamp(14px,2.65cqh,26px);width:62%}.corner-left .scene-text{left:5.5vw}.poem{font-size:clamp(21px,5.8vw,28px);line-height:1.07}
+ .navigation{padding-inline:5.5vw;gap:13px}.navigation:before{left:2%;right:2%}
+ .chapter{min-width:112px;column-gap:7px;grid-template-columns:22px auto;font-size:20px}.chapter .book-sign{width:21px}.chapter #page{font-size:9px}
+ .arrows{gap:3px}.arrows button{width:43px}.arrows button:after{inset-inline:0}
+ .paint-progress{display:flex;max-width:15vw}.index-grid{grid-template-columns:1fr}.index-group{margin-top:19px}
+}
+@media(max-width:370px){.paint-progress{display:none}.chapter{min-width:104px}}
+@media(max-height:480px) and (orientation:landscape){
+ .intro{padding-inline:6%}.intro-copy{display:block;width:57%;transform:rotate(-1deg)}.intro h1{font-size:clamp(39px,min(9vw,17cqh),70px);line-height:.82}
+ .intro-note{font-size:clamp(17px,6cqh,24px);line-height:1.03;margin-top:8px}.enter{font-size:19px;margin-top:3px;min-height:42px}
+ .scene-text{width:59%;bottom:10px}.poem{font-size:clamp(17px,5.4cqh,22px)}
+}
+@container leaf (max-height:475px) and (max-width:650px) and (max-aspect-ratio:10/9){.intro-copy{top:42%;bottom:1%}.intro-note{margin-top:8px}.enter{margin-top:0}}

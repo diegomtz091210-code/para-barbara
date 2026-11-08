@@ -1,0 +1,19 @@
+/* A hung Fresnel and its pool of light stay put while the printed leaves move. */
+.stage-light{position:absolute;inset:0;z-index:1;isolation:isolate;pointer-events:none;user-select:none;overflow:hidden}
+.light-field{position:absolute;display:block;width:100%;height:100%;inset:0}
+.theatre-lamp{position:absolute;display:block;left:50%;top:0;width:clamp(48px,5.5vw,75px);height:auto;transform:translate(-50%,-16%);overflow:visible}
+#outgoing{z-index:2}#scene{z-index:3}#brush-surface{z-index:4}
+@media(max-width:685px){.theatre-lamp{width:49px}}
+@media(max-height:480px){.theatre-lamp{width:40px}}
+/* The dedication sits in the painted light. The origin is shared with the crop of the sky. */
+.finale{--name-ink:#4c302d;--large-ink:#4d2729;--note-ink:#462c2a;--large-size:clamp(46px,min(23cqw,17cqh),149px);--name-size:clamp(29px,min(13.1cqw,8.7cqh),78px);--note-size:clamp(18px,min(6.6cqw,4.35cqh),34px);color:var(--name-ink);padding:0}
+.finale-copy{position:absolute;inset:0;display:block;transform:none;max-width:none;width:100%;text-align:center;pointer-events:none}
+.finale-copy h1,.finale-copy .finale-message,.finale-copy .finale-note{position:absolute;left:var(--sol-x,50%);width:95%;margin:0;font-weight:400;grid-column:auto;grid-row:auto;text-wrap:wrap}
+.finale-copy h1{top:calc(var(--sol-y,50%) - var(--large-size)*.57);transform:translate(-50%,-100%) rotate(-2deg);color:var(--name-ink);font-size:var(--name-size);line-height:.93;letter-spacing:-.025em}
+.finale-copy .finale-message{top:var(--sol-y,50%);transform:translate(-50%,-51%) rotate(-2deg);color:var(--large-ink);font-size:var(--large-size);line-height:.94;letter-spacing:-.04em}
+.finale-copy .finale-note{top:calc(var(--sol-y,50%) + var(--large-size)*.57);transform:translateX(-50%) rotate(-1deg);color:var(--note-ink);font-size:var(--note-size);line-height:1.10;letter-spacing:0;text-shadow:0 1px 5px #ffddaa45}
+.finale-copy .ink-word{vertical-align:baseline}
+.end-actions .restart{color:#fff2d8;text-shadow:0 1px 3px #302029,0 1px 10px #3020298c}
+@container leaf (max-height:510px) and (max-width:650px){.finale-copy .finale-note{top:calc(var(--sol-y,50%) + var(--large-size)*.46)}}
+@media(max-height:480px) and (orientation:landscape){.finale-copy .finale-note br{display:none}.finale-copy .finale-note{line-height:1.08}.end-actions{bottom:0}}
+@media(prefers-reduced-motion:reduce){.finale-copy .ink-word{opacity:1!important;clip-path:none!important;transform:none!important}}

@@ -1,0 +1,61 @@
+/* Copperplate lettering, cream paper and a single deep-blue ink. */
+@font-face{font-family:'Pinyon Script';src:url('fonts/pinyon.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Petit Formal Script';src:url('fonts/petit.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{--paper:#f8f4eb;--navy:#24354f;--sand:#c5b38f}
+#announcement{position:fixed;bottom:0;left:0}
+.intro{color:var(--navy)}
+.intro h1{font-size:clamp(72px,min(9.4vw,15.6cqh),138px);line-height:1.08;letter-spacing:0}
+.intro h1 .ink-word:last-child{color:var(--navy)}
+.intro-note{font-family:'Petit Formal Script',cursive;font-size:clamp(19px,1.7vw,25px);line-height:1.52;margin-top:clamp(15px,3cqh,29px);max-width:100%}
+.enter{font-size:31px;margin-top:16px}
+.scene-text{width:min(72%,560px);bottom:clamp(24px,3.8cqh,40px)}
+.poem{font-family:'Petit Formal Script',cursive;font-size:clamp(20px,1.8vw,25px);line-height:1.35;transform:rotate(-1deg);letter-spacing:0}
+.ink-word{clip-path:inset(0 100% 0 0)}
+.navigation{color:var(--navy);background:var(--paper)}
+.book-tools{background:linear-gradient(100deg,#e7dcc8,#faf6ed 35%,#f2eadc 76%,#e7ddc9);border-top:1px solid #24354f1b}
+.book-tools .chapter,.pocket-key{font:italic 16px/1.15 Georgia,serif;color:var(--navy)}
+.pocket-key svg{stroke:var(--navy)}.pocket-key .env-paper{fill:#faf6ed}.pocket-key .seal{fill:#314a6b;stroke:#24354f}
+.pocket-key span{border-bottom-color:#24354f55}
+dialog{color:var(--navy)}
+dialog h2{font-family:'Pinyon Script',cursive}
+#index-dialog{background:linear-gradient(91deg,#f5efe3,#fbf7ef 32.5%,#e2d6bf 33%,#f7f1e6 34%,#f7f2e8 66.1%,#e3d7c0 66.5%,#faf6ec 67.1%,#f0e7d7);color:var(--navy)}
+#index-dialog .dialog-head h2{font-size:clamp(36px,7vw,48px);line-height:1.2}
+#map-stops button{font:italic 15px/1.25 Georgia,serif;color:var(--navy)}
+#map-stops [aria-pressed=true]{color:#24354f}#map-stops [aria-pressed=true] span{box-shadow:0 1px 0 #24354f}
+.index-group h3{color:var(--navy);font-family:'Pinyon Script',cursive;font-size:35px}
+.index-item{font:italic 18px/1.3 Georgia,serif}.index-caption em{color:#526079}
+.index-ends [aria-current],.index-item[aria-current],.map-luck{color:#24354f}
+#random-page{font-family:'Pinyon Script',cursive;font-size:29px}
+#index-list .index-ends button{font:italic 16px/1.3 Georgia,serif}
+#letter-dialog{color:var(--navy);background:var(--paper)}
+.letter-sheet{background:linear-gradient(178deg,#eee4d1 0%,#faf6eb 29.8%,#e1d5bf 30%,#fcf8ef 30.7%,#f5eddf 68.8%,#e0d4bd 69.2%,#fcf6e9 69.9%,#eee3d0 100%)}
+.letter-address{font-family:'Pinyon Script',cursive;min-height:98px}.letter-address strong{font-size:56px}.letter-address span{color:var(--navy);font-size:24px}
+.letter-body h2{font-family:'Pinyon Script',cursive;font-size:clamp(36px,8vw,48px);line-height:1.18;color:var(--navy);margin-bottom:17px}
+.letter-body p{font:20px/1.6 'Petit Formal Script',cursive}.letter-body p+p{margin-top:19px}
+.letter-tail{font-family:'Pinyon Script',cursive;color:var(--navy);font-size:27px}.postage svg{color:var(--navy)}
+.finale{--name-ink:#24354f;--large-ink:#24354f;--note-ink:#24354f;--large-size:clamp(55px,min(24cqw,16cqh),140px);--name-size:clamp(36px,min(14cqw,9cqh),78px);--note-size:clamp(17px,min(5cqw,3.25cqh),26px)}
+.finale-copy h1{line-height:1.12;letter-spacing:0;top:calc(var(--sol-y,50%) - var(--large-size)*.65)}
+.finale-copy .finale-message{line-height:1.1;letter-spacing:0}
+.finale-copy .finale-note{font-family:'Petit Formal Script',cursive;line-height:1.5;top:calc(var(--sol-y,50%) + var(--large-size)*.68)}
+.restart{font-family:'Pinyon Script',cursive;font-size:27px}
+.restart span{font-family:Arial,sans-serif}
+@media(max-width:370px){.pocket-key{font-size:12px}.pocket-key svg{width:24px}}
+@media(max-width:685px){
+ .scene-text{width:76%;bottom:clamp(26px,4cqh,35px)}
+ .poem{font-size:clamp(19px,5.25vw,22px);line-height:1.35}
+ .book-tools .chapter,.pocket-key{font-size:13px}
+ .letter-sheet{padding-inline:25px}.letter-body p{font-size:19px;line-height:1.6}
+ #map-stops button{font-size:12px}.letter-address strong{font-size:48px}
+}
+@container leaf (max-width:650px) and (max-aspect-ratio:10/9){
+ .intro-copy{top:42%;bottom:1%;left:8%;right:7%}
+ .intro h1{font-size:clamp(48px,min(18.5cqw,11.2cqh),90px);line-height:1.04}
+ .intro-note{font-size:clamp(17px,min(4.9cqw,3.2cqh),21px);line-height:1.4;margin-top:clamp(10px,2.2cqh,19px)}
+ .enter{font-size:27px;line-height:1;margin-top:clamp(4px,1.5cqh,14px)}
+}
+@media(max-height:480px) and (orientation:landscape){
+ .intro h1{font-size:clamp(35px,13cqh,65px);line-height:1.02}
+ .intro-note{font-size:16px;line-height:1.25;margin-top:9px}.enter{font-size:23px;margin-top:3px}
+ .scene-text{width:76%;bottom:20px}.poem{font-size:17px;line-height:1.22}
+ .finale{--large-size:clamp(46px,21cqh,80px);--name-size:clamp(29px,12cqh,45px);--note-size:16px}
+}

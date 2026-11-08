@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf8f0"><meta name="description" content="Bárbara, vi estos girasoles y pensé en ti. Un paseo por los cuadros que te gustan.">
+<title>Bárbara, esto es para ti</title>
+<meta property="og:type" content="website"><meta property="og:locale" content="es_MX"><meta property="og:title" content="Bárbara, mira esto.">
+<meta property="og:description" content="Vi estos girasoles y pensé en ti. ¿Me acompañas un ratito?"><meta property="og:url" content="https://barbara-materia-del-color.camachodiego23999101.chatgpt.site/">
+<meta property="og:image" content="https://barbara-materia-del-color.camachodiego23999101.chatgpt.site/graphics/para-barbara.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Una carta para Bárbara, una estampa de girasoles y dos niños que caminan de la mano."><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="preload" href="fonts/pinyon.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="fonts/petit.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="style.css?v=19">
+<link rel="stylesheet" href="album.css?v=19"><link rel="stylesheet" href="camino.css?v=19"><link rel="stylesheet" href="luz.css"><link rel="stylesheet" href="tinta.css?v=19"><link rel="preload" href="graphics/estampas-de-portada.webp" as="image">
+<script defer src="artworks.js?v=19"></script><script defer src="plate-studies.js?v=16"></script><script defer src="folio.js?v=19"></script><script defer src="endpapers.js?v=19"></script><script defer src="brush-engine.js?v=16"></script><script defer src="book-engine.js"></script><script defer src="traveler.js?v=16"></script><script defer src="journey.js?v=19"></script><script defer src="postscript.js?v=19"></script><script defer src="app.js?v=19"></script>
+</head>
+<body>
+<a href="#scene" class="skip">Saltar al contenido</a>
+<div id="stage">
+ <canvas id="painting-surface" aria-hidden="true"></canvas>
+ <div class="stage-light" aria-hidden="true">
+  <svg class="light-field" viewBox="0 0 1000 1000" preserveAspectRatio="none" focusable="false">
+   <defs>
+    <linearGradient id="offstage" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#291e22" stop-opacity=".66"/><stop offset=".30" stop-color="#312330" stop-opacity=".43"/><stop offset=".69" stop-color="#39232a" stop-opacity=".17"/><stop offset="1" stop-color="#39232a" stop-opacity=".018"/></linearGradient>
+    <linearGradient id="shaft" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#fff2bb" stop-opacity=".36"/><stop offset=".22" stop-color="#ffeab3" stop-opacity=".16"/><stop offset=".61" stop-color="#ffe9ba" stop-opacity=".065"/><stop offset="1" stop-color="#ffdf9f" stop-opacity=".015"/></linearGradient>
+    <filter id="beam-edge" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="13 8"/></filter>
+    <filter id="beam-haze" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="27 14"/></filter>
+    <mask id="outside-ray" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1000"><rect width="1000" height="1000" fill="#fff"/><path d="M493 11Q500 9 507 11L1160 1030H-160Z" fill="#111" filter="url(#beam-edge)"/></mask>
+   </defs>
+   <rect width="1000" height="1000" fill="url(#offstage)" mask="url(#outside-ray)"/>
+   <path d="M494 12H506L1150 1015H-150Z" fill="url(#shaft)" filter="url(#beam-haze)"/>
+  </svg>
+  <svg class="theatre-lamp" viewBox="0 0 86 48" focusable="false">
+   <defs><linearGradient id="lamp-metal" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#686059"/><stop offset=".40" stop-color="#302e30"/><stop offset=".82" stop-color="#292326"/><stop offset="1" stop-color="#63594e"/></linearGradient><radialGradient id="lamp-lens"><stop stop-color="#fffbed"/><stop offset=".52" stop-color="#ffe7a0"/><stop offset="1" stop-color="#ce9859"/></radialGradient></defs>
+   <path d="M41-4h4v14h-4z" fill="#3d3837"/><path d="M25 10v8c0 4 3 7 7 8m29-16v8c0 4-3 7-7 8" fill="none" stroke="#49423c" stroke-width="3.1" stroke-linecap="round"/>
+   <path d="m29 10 6-5h16l6 5 1 13-5 7H33l-5-7z" fill="url(#lamp-metal)" stroke="#332b2b" stroke-width="1.1"/>
+   <g fill="none" stroke="#a89a7d" opacity=".64" stroke-linecap="round"><path d="m34 9 16-.3m-18 4 21-.2m-20 4 18 0m-17 3 14 .2" stroke-width=".85"/><path d="M30 11v10" stroke-width="1.2"/></g>
+   <circle cx="25.6" cy="19.4" r="2.1" fill="#292827"/><circle cx="60.4" cy="19.4" r="2.1" fill="#292827"/>
+   <path d="m30 23-11 6-6 9 16-5 5-6zm26 0 11 6 6 9-16-5-5-6z" fill="#51483f" stroke="#302b2a" stroke-linejoin="round"/><path d="m17 35 11-3m41 3-11-3" fill="none" stroke="#b39b72" stroke-width=".8"/>
+   <path d="m31 24.5 2 6c5 3.5 15 3.5 20 0l2-6" fill="#594839"/><ellipse cx="43" cy="31.2" rx="10.3" ry="2.75" fill="url(#lamp-lens)"/><path d="M34 31q8.5 3.1 18 .2" fill="none" stroke="#fff0c1" stroke-width=".7"/>
+  </svg>
+ </div>
+ <div id="outgoing" aria-hidden="true" inert></div>
+ <main id="scene" tabindex="-1"></main>
+ <canvas id="brush-surface" aria-hidden="true"></canvas>
+ <p id="loading" role="status" hidden>Estoy preparando la siguiente página…</p>
+</div>
+<footer class="navigation" aria-label="Recorrido del cuaderno">
+ <div class="journey-window"><canvas id="journey-canvas" role="img" aria-label="Dos niños de la mano al inicio del camino"></canvas></div>
+ <div class="book-tools">
+ <button class="chapter" id="index-open" aria-label="Elegir un momento" aria-haspopup="dialog"><svg class="book-sign" viewBox="0 0 32 29" aria-hidden="true"><path d="M16 7c-4-3-7-4-13-3l1 18c5-1 8 0 12 3 4-3 8-4 13-4l-1-18c-5 0-8 1-12 4zm0 0v18M6 8q4-1 7 2m-7 3q4-1 7 2m6-5q3-3 6-3m-6 7q3-3 6-3"/></svg><span id="act">para ti</span><span id="page">01 / 51</span></button>
+ <button id="note-open" class="pocket-key" aria-haspopup="dialog" aria-label="Abrir una nota para Bárbara"><svg viewBox="0 0 41 29" aria-hidden="true"><path class="env-paper" d="m3 7 32-4 3 19-32 4z"/><path d="m4 8 17 10L35 5M6 24l11-11m20 8-13-8"/><circle class="seal" cx="21" cy="16.5" r="3"/></svg><span id="note-label">Una nota</span></button>
+ <div class="arrows"><button id="prev" aria-label="Momento anterior"><svg viewBox="0 0 36 24" aria-hidden="true"><path d="M32 12Q19 11 4 12M12 4 3 12l10 8"/></svg></button><button id="next" aria-label="Siguiente momento"><svg viewBox="0 0 36 24" aria-hidden="true"><path d="M4 12q13 1 28 0M24 4l9 8-10 8"/></svg></button></div>
+ </div>
+</footer>
+<div id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<dialog id="index-dialog" aria-label="Elegir un momento"><div class="dialog-head"><h2>¿A dónde volvemos?</h2><button class="close" data-close aria-label="Cerrar índice">×</button></div><div id="map-stops" role="group" aria-label="Elegir un tramo del paseo"></div>
+ <div class="map-luck"><button id="random-page" type="button" aria-label="Abrir una pintura al azar"><svg viewBox="0 0 35 26" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 16-5 7 14-17 5zM8 7l17-5 6 14-5 2M8 14l7-2m-5 5 5-1"/><path d="m18 6 .6 3.4 3.1.3-2.7 1.5.1 3.2-1.9-2.5-2.8.8 1.6-2.6-1.5-2 2.6.6Z" stroke-width=".85"/></svg><span>Una al azar</span></button></div>
+ <div id="index-list"></div></dialog>
+<dialog id="art-dialog" aria-labelledby="art-label"><div class="dialog-head"><h2 id="art-label"></h2><button class="close" data-close aria-label="Cerrar obra">×</button></div><div class="full-art"><img id="full-image" alt=""></div><p id="full-caption"></p></dialog>
+<dialog id="letter-dialog" aria-labelledby="letter-title"><article class="letter-sheet">
+ <button class="close letter-close" data-close aria-label="Cerrar la nota">×</button>
+ <div class="letter-address"><span>Para</span><strong>Bárbara</strong></div>
+ <div class="postage" aria-hidden="true"><img id="letter-stamp" alt=""><svg viewBox="0 0 136 77"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="42" cy="38" r="26"/><path d="M20 37a22 22 0 0 1 41-9M25 51a22 22 0 0 0 35 0M58 31c17-12 28 6 42-2s22 5 32-1M61 38c14-11 27 6 40-2s22 5 31-1M57 45c19-12 29 6 44-2s22 5 31-1"/></g><text x="42" y="46" text-anchor="middle">B</text></svg></div>
+ <div class="letter-body"><h2 id="letter-title"></h2><p id="letter-one"></p><p id="letter-two"></p></div>
+ <div class="letter-tail" aria-hidden="true"><span id="letter-glyph"></span><i></i><span>para ti.</span></div>
+ </article></dialog>
+<noscript>Activa JavaScript para ver la carta y sus pinturas.</noscript>
+</body></html>
